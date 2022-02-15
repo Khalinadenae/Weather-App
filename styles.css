@@ -89,3 +89,9 @@ button {
 button:hover {
   backround-color: rgba(33, 204, 48, 0.986);
 }
+.git {
+  color: rgba(216, 191, 216, 0.774);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+}
