@@ -11,101 +11,98 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/daeac0eefc.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Mukta:wght@200&family=Open+Sans+Condensed:wght@300&family=Source+Serif+4:ital,wght@1,200&family=Waterfall&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container"> 
+    <div class="container">
 
-         <form id="search-form">
-           <br>
-         
-      <input type="text" class="search" placeholder="Enter city" id="search-input"/>
-      <input type="submit" class="btn btn-success" value="search" /> <span>
-    <button type="button" class="btn btn-success">Current Location</button>  </span>
+  <div class="row justify-content-center">
 
-    </form>
+    <div class="col-4" id="location">
+          <h1> Dumfries </h1> 
+         <h2> Saturday, January 29th</h2> 
+         <h4> 5:52 </h4> 
+         <br> 
+        <h3 id="tempCF" >  60 F° </h3>
+       <h7> Mostly cloudy </h7>
+       <i class="fa-solid fa-cloud"></i>
 
+ 
+          
+    </div>
 
-  <section>
-    <div class="current-info">
-         <div class="location"> 
-          <h1> Dumfries </h1> <br>
-        <h2> Saturday, January 29th</h2> 
-        <h4> 5:52 </h4>
-   <h3 id="tempCF" > <strong> 60 F° </strong> </h3> 
-        
-      <h5> Mostly cloudy </h5>
-      <img src="https://img.icons8.com/cotton/64/000000/clouds--v3.png"/>
+    <div class="col-4" id="description">
+         <ul>
+       <li  id="max-temperature"> High 59° / <span id="min-temperature"> Low 45 ° </li> 
+       <li id="feels-like" > <em> FEELS LIKE 50° </em> </li>
+       <li id="humidity"> Humidity 35% </li>
+        <li id="wind-speed"> Wind 18mph </li>
+         </ul>
+
+         <table class="table table-sm ">
+<table class="table table-hover">
+
+  <tbody>
+    <tr>
+      <th scope="row no-gutters"> </th>
+        <td> Friday</td>
+      <td><em>67</em> /57 </td>
+      <td>Sunny </td>
+    </tr>
+  </tr>
+  
+    <tr>
+      <th scope="row"> </th>
+        <td> Friday</td>
+      <td><em>67</em>/ 57</td>
+      <td>Cloudy </td>
+    
+      </tr>
       
-             <button id="tempF"> F °</button> 
-        |   <button id="tempC"> C°</button> 
+    </tr>
+      <th scope="row"> </th>
+        <td> Friday</td>
+      <td><em>67</em>/ 57</td>
+      <td>Cloudy </td>
+  
+      </tr>
+  </tr>
+          <th scope="row"> </th>
+            <td> Friday</td>
+      <td><em>67</em>/ 57</td>
+      <td>Cloudy </td>
+  
+          </tr>
+</tr>
+          <th scope="row"> </th>
+            <td> Friday</td>
+      <td><em>67</em> /57</td>
+      <td>Cloudy </td>
+  
+          </tr>
+</tr>
+  </tbody>
+</table>
+</table>
+    </div>
 
-        <span id="max-temperature"> 4° / </span> <span id="min-temperature"> 1 ° </span> 
-       <p id="feels-like" > <em> FEELS LIKE 13° </em> </p>
-       <span id="humidity"> Humidity: 35% </span>
-        <p id="wind-speed"> Wind: 18mph </p>
+  </div>
 
-     <br>
-      
-   <div class="temperature">
-     <div class="row row-cols-5">
-            <div class="col ">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title ahead-day"> Sun 30 </h5>
-                    <p class="ahead-icon"> ⛅  </p>
-                    <p class="card-text ahead-low">  Hi 35  </p>
-                    <p class="card-text ahead-high">Lo 23  </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title ahead-day"> Mon 31 </h5>
-                      <p class="ahead-icon"> ⛅ </p>
-                      <p class="card-text ahead-low"> Hi 42  </p>
-                      <p class="card-text ahead-high"> Lo 25  </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title ahead-day"> Tue 01 </h5>
-                        <p class="ahead-icon">  ⛅ </p>
-                        <p class="card-text ahead-low"> Hi 46  </p>
-                        <p class="card-text ahead-high"> Lo 28  </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title ahead-day"> Wed 02 </h5>
-                          <p class="ahead-icon">  ⛅ </p>
-                          <p class="card-text ahead-low"> Hi 52  </p>
-                          <p class="card-text ahead-high"> Lo 40 </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title ahead-day"> Thu 03 </h5>
-                            <p class="ahead-icon"> 🌧️ </p>
-                            <p class="card-text ahead-low">  Hi 58  </p>
-                            <p class="card-text ahead-high">Lo 40  </p>
-                          </div>
-                        </div>
-                      </div>   
-                      </div>
-                      </div>  
-                    <p class="git"> open code source by <a href="https://github.com/Khalinadenae/Weather-App" target="_blank"> Khalina Boyce </a></p>
-   
+</div>
+              
+<p class="git"> open code source by <a href="https://github.com/Khalinadenae/Weather-App" target="_blank"> Khalina Boyce </a></p>
+                    </body>
+  
               <script src="script.js"> </script>  
 </html>

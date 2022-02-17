@@ -69,11 +69,11 @@ function showTemperature(response) {
   //temperature description
   let maxTemperature = Math.round(response.data.main.temp_max);
   let dailyMaxTemp = document.querySelector("#max-temperature");
-  dailyMaxTemp.innerHTML = `${maxTemperature}°F`;
+  dailyMaxTemp.innerHTML = ` Hi ${maxTemperature}°F / `;
 
   let minTemperature = Math.round(response.data.main.temp_min);
   let dailyMinTemp = document.querySelector("#min-temperature");
-  dailyMinTemp.innerHTML = ` ${minTemperature}°F`;
+  dailyMinTemp.innerHTML = ` Low ${minTemperature}°F`;
 
   //Feels like
   let feelsLike = Math.round(response.data.main.feels_like);
