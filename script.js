@@ -64,16 +64,19 @@ form.addEventListener("submit", searchCity);
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#tempCF");
-  temperatureElement.innerHTML = `${temperature}`;
+  temperatureElement.innerHTML = `${temperature} °  `;
 
   //temperature description
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+
   let maxTemperature = Math.round(response.data.main.temp_max);
   let dailyMaxTemp = document.querySelector("#max-temperature");
-  dailyMaxTemp.innerHTML = ` Hi ${maxTemperature} `;
+  dailyMaxTemp.innerHTML = ` Hi ${maxTemperature} ° `;
 
   let minTemperature = Math.round(response.data.main.temp_min);
   let dailyMinTemp = document.querySelector("#min-temperature");
-  dailyMinTemp.innerHTML = ` Low ${minTemperature}`;
+  dailyMinTemp.innerHTML = ` Low ${minTemperature} ° `;
 
   //Feels like
   let feelsLike = Math.round(response.data.main.feels_like);
@@ -89,6 +92,13 @@ function showTemperature(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let showWindSpeed = document.querySelector("#wind-speed");
   showWindSpeed.innerHTML = `${windSpeed}mph`;
+
+  //icon
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function currentLocation(response) {

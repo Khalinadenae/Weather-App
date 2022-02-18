@@ -8,7 +8,7 @@ body {
 .container {
   border-radius: 10px;
   margin: 10px 0 auto 10px 0 auto;
-  max-width: 1px;
+
   background-color: rgba(157, 158, 143, 0.34);
   box-shadow: 12px 12px 2px 1px rgba(95, 77, 67, 1);
 }
@@ -24,11 +24,17 @@ li {
 #location {
   padding-top: 50px;
 }
-#description {
+.col-4 {
   padding-top: 60px;
   font-size: 13px;
   line-height: 30px;
   margin: 0 auto;
+}
+#description {
+  text-transform: capitalize;
+}
+h1:first-letter {
+  text-transform: capitalize;
 }
 .btn-light {
   background-color: rgba(98, 49, 4, 0.12);
