@@ -64,21 +64,21 @@ form.addEventListener("submit", searchCity);
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#tempCF");
-  temperatureElement.innerHTML = `${temperature}°F`;
+  temperatureElement.innerHTML = `${temperature}`;
 
   //temperature description
   let maxTemperature = Math.round(response.data.main.temp_max);
   let dailyMaxTemp = document.querySelector("#max-temperature");
-  dailyMaxTemp.innerHTML = ` Hi ${maxTemperature}°F / `;
+  dailyMaxTemp.innerHTML = ` Hi ${maxTemperature} `;
 
   let minTemperature = Math.round(response.data.main.temp_min);
   let dailyMinTemp = document.querySelector("#min-temperature");
-  dailyMinTemp.innerHTML = ` Low ${minTemperature}°F`;
+  dailyMinTemp.innerHTML = ` Low ${minTemperature}`;
 
   //Feels like
   let feelsLike = Math.round(response.data.main.feels_like);
   let perception = document.querySelector("#feels-like");
-  perception.innerHTML = `FEELS LIKE ${feelsLike}°F`;
+  perception.innerHTML = `FEELS LIKE ${feelsLike}`;
 
   //Humidity
   let humidity = Math.round(response.data.main.humidity);
