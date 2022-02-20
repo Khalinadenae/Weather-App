@@ -112,7 +112,7 @@ function showTemperature(response) {
   //Wind Speed
   let windSpeed = Math.round(response.data.wind.speed);
   let showWindSpeed = document.querySelector("#wind-speed");
-  showWindSpeed.innerHTML = ` Wind${windSpeed}mph`;
+  showWindSpeed.innerHTML = ` Wind ${windSpeed}mph`;
 
   //icon
   let iconElement = document.querySelector("#icon");
