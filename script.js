@@ -51,47 +51,68 @@ function searchCity(event) {
   h1.innerHTML = `${searchInput.value}`;
 
   let apiKey = "7a8fb47ff40cd23384da3446c5066c54";
-  let unit = "imperial";
+  let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showTemperature);
 }
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#tempCF");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#tempCF");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
+//celsius to farenheit
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 //when a user searches for a city  it should display the current temperature of the city.
 
 function showTemperature(response) {
+  celsiusTemperature = response.data.main.temp;
+
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#tempCF");
-  temperatureElement.innerHTML = `${temperature} °  `;
+  temperatureElement.innerHTML = `${temperature}°`;
 
   //temperature description
-  let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.weather[0].description;
-
   let maxTemperature = Math.round(response.data.main.temp_max);
   let dailyMaxTemp = document.querySelector("#max-temperature");
-  dailyMaxTemp.innerHTML = ` Hi ${maxTemperature} ° `;
+  dailyMaxTemp.innerHTML = `High ${maxTemperature}°`;
 
   let minTemperature = Math.round(response.data.main.temp_min);
   let dailyMinTemp = document.querySelector("#min-temperature");
-  dailyMinTemp.innerHTML = ` Low ${minTemperature} ° `;
+  dailyMinTemp.innerHTML = ` Low ${minTemperature}°`;
 
   //Feels like
   let feelsLike = Math.round(response.data.main.feels_like);
   let perception = document.querySelector("#feels-like");
-  perception.innerHTML = `FEELS LIKE ${feelsLike}`;
+  perception.innerHTML = `FEELS LIKE ${feelsLike}°`;
 
   //Humidity
   let humidity = Math.round(response.data.main.humidity);
   let showHumidity = document.querySelector("#humidity");
-  showHumidity.innerHTML = `${humidity}%`;
+  showHumidity.innerHTML = `Humidity ${humidity}%`;
 
   //Wind Speed
   let windSpeed = Math.round(response.data.wind.speed);
   let showWindSpeed = document.querySelector("#wind-speed");
-  showWindSpeed.innerHTML = `${windSpeed}mph`;
+  showWindSpeed.innerHTML = ` Wind${windSpeed}mph`;
 
   //icon
   let iconElement = document.querySelector("#icon");
@@ -106,5 +127,3 @@ function currentLocation(response) {
   let temperatureElement = document.querySelector("#tempCF");
   temperatureElement.innerHTML = `${temperature}°F`;
 }
-
-//Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.

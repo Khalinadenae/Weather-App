@@ -13,10 +13,11 @@ body {
   box-shadow: 12px 12px 2px 1px rgba(95, 77, 67, 1);
 }
 h3 {
-  font-size: 50px;
+  font-size: 65px;
 }
 h2 {
-  font-size: 25px;
+  font-size: 15px;
+  padding-top: 10px;
 }
 li {
   list-style: none;
@@ -24,9 +25,8 @@ li {
 #location {
   padding-top: 50px;
 }
-.col-4 {
-  padding-top: 60px;
-  font-size: 13px;
+h1 {
+  font-size: 50px;
   line-height: 30px;
   margin: 0 auto;
 }
@@ -36,6 +36,7 @@ li {
 h1:first-letter {
   text-transform: capitalize;
 }
+
 .btn-light {
   background-color: rgba(98, 49, 4, 0.12);
   color: rgba(95, 77, 67, 1);
@@ -103,12 +104,7 @@ body {
   background-color: rgba(157, 158, 143, 0.34);
   box-shadow: 12px 12px 2px 1px rgba(95, 77, 67, 1);
 }
-h3 {
-  font-size: 50px;
-}
-h2 {
-  font-size: 25px;
-}
+
 li {
   list-style: none;
 }
@@ -116,7 +112,7 @@ li {
   padding-top: 50px;
 }
 #description {
-  padding-top: 60px;
+  padding-top: 50px;
   font-size: 13px;
   line-height: 30px;
   margin: 0 auto;
@@ -172,4 +168,8 @@ button {
 
 button:hover {
   background-color: rgba(95, 77, 67, 1);
+}
+
+.units .active {
+  color: white;
 }

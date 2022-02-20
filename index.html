@@ -25,30 +25,39 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
+  <div class="container">
+
+<div class="row align-items-center">
+
 <form id="search-form">
          <input type="text" class="search" placeholder="Enter city" id="search-input"/>
       <input type="submit" class="btn btn-light" value="search" /> <span>
-    <button type="button" class="btn btn-light"> <i class="fa-solid fa-map-pin"> </i></button>  </span>
+    <button type="button" id="current-location-button" class="btn btn-light"> <i class="fa-solid fa-map-pin"> </i></button>  </span>
   <div class="row justify-content-center">
 </form>
-    <div class="col-4" id="location">
-          <h1> Dumfries </h1> 
-         <h2> Saturday, January 29th</h2> 
-         <h4> 5:52 </h4> 
-         <br> 
-        <h3 id="tempCF" >  60 F° </h3>
-       <h7 id="description"> Mostly cloudy </h7>
-   
-       <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" id="icon">
 
-       <br>
-  <button id="tempF"> F ° </button> 
-           <button id="tempC"> C° </button>
+</div>
 
-    </div>
+ 
+  <div class="row align-items-center">
+    <div class="col" id="location">
 
-    <div class="col-4" >
+
+      
+        <h3 id="tempCF" >  60  </h3>
+
+<span class="units">
+  <a href="#" id="celsius-link" class="active"> C </a> 
+  <a href="#" id="fahrenheit-link"> F </a>
+
+</span>
+
+
+
+           <br>
+             <h7 id="description"> Mostly cloudy </h7>
+     <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" id="icon"> 
+
          <ul>
       <span> <li  id="max-temperature"> High 59°  </li> <li id="min-temperature"> Low 45 ° </li> </span>
        <li id="feels-like" > <em> FEELS LIKE 50° </em> </li>
@@ -56,7 +65,26 @@
         <li id="wind-speed"> Wind 18mph </li>
          </ul>
 
-         <table class="table table-sm ">
+
+
+      
+    </div>
+
+
+
+
+    <div class="col">
+
+  <h1> Dumfries </h1> 
+         <h2> Saturday, January 29th</h2> 
+         <h4> 5:52 </h4> 
+         <br> 
+    </div>
+    <div class="col">
+ <p>Next 5 days </p>
+
+
+<table class="table table-sm ">
 <table class="table table-hover">
 
   <tbody>
@@ -101,10 +129,19 @@
   </tbody>
 </table>
 </table>
+
+
+
+
+
+
+
+
+
     </div>
-
   </div>
-
+ 
+  </div>
 </div>
               
 <p class="git"> open code source by <a href="https://github.com/Khalinadenae/Weather-App" target="_blank"> Khalina Boyce </a></p>
