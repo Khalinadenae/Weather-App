@@ -42,6 +42,40 @@ let date = now.getDate();
 
 h2.innerHTML = ` ${day} , ${month} , ${date}`;
 
+//feature : API integration 5 day forecast
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = "Hello";
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+  <table class="table table-sm ">
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th scope="row no-gutters"> </th>
+      <div class="forecast-temp">  <td> <span class="max">68°</span>/60° <span class="min"></span></td>  </div>
+      <div class="forecast-date">   <td> ${day} </td> </div>
+ <div class="temp-description"> <td>Sunny </td>  </div>
+    </tr>
+  </tr>
+  `;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Feature 2: when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
 
 function searchCity(event) {
@@ -74,6 +108,7 @@ let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
+showForecast();
 //celsius to farenheit
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");

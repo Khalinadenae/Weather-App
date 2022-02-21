@@ -186,3 +186,9 @@ a {
 a:hover {
   color: ]white;
 }
+.min {
+  opacity: 0.8;
+}
+.max {
+  font-weight: 900px;
+}
