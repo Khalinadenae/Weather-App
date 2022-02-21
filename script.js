@@ -76,7 +76,7 @@ function showForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-//Feature 2: when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
+function getForecast(coordinates) {}
 
 function searchCity(event) {
   event.preventDefault();
@@ -155,6 +155,8 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function currentLocation(response) {
