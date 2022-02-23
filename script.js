@@ -41,37 +41,56 @@ let month = months[now.getMonth()];
 let date = now.getDate();
 
 h2.innerHTML = ` ${day} , ${month} , ${date}`;
-
-//feature : API integration 5 day forecast
-function showForecast(response) {
-  console.log(response.data);
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = "Hello";
+//
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
   let days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+
+  return days[day];
+}
+
+//feature : API integration 5 day forecast
+function showForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = "Next 5 days";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        ` 
   <table class="table table-sm ">
 <table class="table table-hover">
   <tbody>
     <tr>
       <th scope="row no-gutters"> </th>
-      <div class="forecast-temp">  <td> <span class="max">68°</span>/60° <span class="min"></span></td>  </div>
-      <div class="forecast-date">   <td> ${day} </td> </div>
- <div class="temp-description"> <td>Sunny </td>  </div>
+      <div class="forecast-temp">  <td>
+       <span class="max">${Math.round(forecastDay.temp.max)}°</span> 
+      <span class="min"> / ${Math.round(
+        forecastDay.temp.min
+      )}°</span></td> </div>
+      <div class="forecast-date">   <td> ${formatDay(
+        forecastDay.dt
+      )} </td> </div>
+ <div class="temp-description"> <td>Sunny </td> <img 
+ src="http://openweathermap.org/img/wn/${
+   forecastDay.weather[0].icon
+ }@2x.png" width="35" /></div>
+
     </tr>
   </tr>
   `;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
