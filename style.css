@@ -49,6 +49,7 @@ table {
 th {
   color: rgba(95, 77, 67, 1);
   font-weight: 300;
+  font-size: 17px;
 }
 .table-hover tbody tr:hover td {
   color: white;
