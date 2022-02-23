@@ -156,7 +156,9 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
-  getForecast(response.data.coord);
+  getForecast(response.data);
+
+  console.log(response.data);
 }
 
 function currentLocation(response) {
