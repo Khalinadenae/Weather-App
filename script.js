@@ -43,7 +43,8 @@ let date = now.getDate();
 h2.innerHTML = ` ${day} , ${month} , ${date}`;
 
 //feature : API integration 5 day forecast
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = "Hello";
@@ -76,7 +77,13 @@ function showForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(coordinates) {}
+function getForecast(coordinates) {
+  let apiKey = "7a8fb47ff40cd23384da3446c5066c54";
+  let unit = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${unit}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
 
 function searchCity(event) {
   event.preventDefault();
@@ -108,7 +115,6 @@ let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
-showForecast();
 //celsius to farenheit
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -156,9 +162,7 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
-  getForecast(response.data);
-
-  console.log(response.data);
+  getForecast(response.data.coord);
 }
 
 function currentLocation(response) {

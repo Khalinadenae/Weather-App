@@ -8,7 +8,7 @@ body {
 .container {
   border-radius: 10px;
   margin: 10px 0 auto 10px 0 auto;
-
+  max-width: 800px;
   background-color: rgba(157, 158, 143, 0.34);
   box-shadow: 12px 12px 2px 1px rgba(95, 77, 67, 1);
 }
@@ -89,34 +89,7 @@ button {
 button:hover {
   background-color: rgba(95, 77, 67, 1);
 }
-body {
-  background: url(images/grass.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.container {
-  padding: 5px;
-  border-radius: 10px;
-  margin: 10px 0 auto 10px 0 auto;
-  max-width: 700px;
-  background-color: rgba(157, 158, 143, 0.34);
-  box-shadow: 12px 12px 2px 1px rgba(95, 77, 67, 1);
-}
 
-li {
-  list-style: none;
-}
-#location {
-  padding-top: 50px;
-}
-#description {
-  padding-top: 50px;
-  font-size: 13px;
-  line-height: 30px;
-  margin: 0 auto;
-}
 .btn-light {
   background-color: rgba(98, 49, 4, 0.12);
   color: rgba(95, 77, 67, 1);
@@ -127,47 +100,6 @@ li {
   margin: 5px;
   line-height: 0.4in;
   padding-bottom: none;
-}
-body {
-  color: rgba(95, 77, 67, 1);
-  font-family: "Playfair Display", serif;
-  padding-top: 20px;
-}
-table {
-  color: white;
-}
-td {
-  color: rgba(95, 77, 67, 1);
-  font-weight: 300;
-}
-.table-hover tbody tr:hover td {
-  color: white;
-}
-.git {
-  color: rgba(95, 77, 67, 1);
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-}
-a {
-  text-decoration: none;
-  color: white;
-  font-weight: bolder;
-}
-
-button {
-  font-size: 10px;
-  color: rgba(95, 77, 67, 1);
-  border: none;
-  border-radius: 3em;
-}
-#search-form {
-  margin: 10px;
-  width: 70%;
-}
-
-button:hover {
-  background-color: rgba(95, 77, 67, 1);
 }
 
 .units {
