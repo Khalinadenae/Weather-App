@@ -74,19 +74,16 @@ function showForecast(response) {
   <tbody>
     <tr>
       <th scope="row no-gutters"> </th>
-      <div class="forecast-temp">  <td>
-       <span class="max">${Math.round(forecastDay.temp.max)}°</span> 
-      <span class="min"> / ${Math.round(
-        forecastDay.temp.min
-      )}°</span></td> </div>
-      <div class="forecast-date">   <td> ${formatDay(
-        forecastDay.dt
-      )} </td> </div>
- <div class="temp-description"> <td>Sunny </td> <img 
+      <th scope="col"><span class="max">${Math.round(
+        forecastDay.temp.max
+      )}°</span> 
+      <span class="min">/${Math.round(forecastDay.temp.min)}°</span </th>
+      <th scope="col">  ${formatDay(forecastDay.dt)}  </th>
+      <th scope="col"> <img 
  src="http://openweathermap.org/img/wn/${
    forecastDay.weather[0].icon
- }@2x.png" width="35" /></div>
-
+ }@2x.png" width="35" /> </th>
+     
     </tr>
   </tr>
   `;
@@ -133,6 +130,14 @@ let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
+
+//current location button
+
+function onSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-input").value;
+  searchCity(city);
+}
 
 //celsius to farenheit
 
@@ -189,3 +194,25 @@ function currentLocation(response) {
   let temperatureElement = document.querySelector("#tempCF");
   temperatureElement.innerHTML = `${temperature}°F`;
 }
+//current location
+
+function onCurrentCityClick() {
+  console.log("Getting current location...");
+  navigator.geolocation.getCurrentPosition(setCurrentCity);
+}
+
+function setCurrentCity(position) {
+  let longitude = position.coords.longitude;
+  let latitude = position.coords.latitude;
+  let apiKey = "7a8fb47ff40cd23384da3446c5066c54";
+  let unit = "metric";
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+  console.log("Querying weather API...");
+  axios.get(apiURL).then(showTemperature);
+}
+
+let locationSearch = document.querySelector("#search-form");
+locationSearch.addEventListener("submit", onSubmit);
+
+let currentCity = document.querySelector("#current-location-button");
+currentCity.addEventListener("click", onCurrentCityClick);
