@@ -164,8 +164,7 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
-//current location
-
+//current location forecast displayed on button click
 let currentLocationClick = document.querySelector("#current-location-button");
 currentLocationClick.addEventListener("click", retrievePosition);
 
@@ -173,12 +172,10 @@ function retrievePosition(event) {
   navigator.geolocation.getCurrentPosition(getLocation);
   function getLocation(position) {
     console.log(position);
-
     let apiKey = "7a8fb47ff40cd23384da3446c5066c54";
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
     let unit = "imperial";
-
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
     axios.get(url).then(showTemperature);
   }
