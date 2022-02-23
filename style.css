@@ -56,7 +56,7 @@ body {
 table {
   color: white;
 }
-td {
+th {
   color: rgba(95, 77, 67, 1);
   font-weight: 300;
 }
@@ -75,6 +75,9 @@ a {
   font-weight: bolder;
 }
 
+td {
+  color: rgba(95, 77, 67, 1);
+}
 button {
   font-size: 10px;
   color: rgba(95, 77, 67, 1);
@@ -116,7 +119,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: ]white;
+  color: rgba(95, 77, 67, 1);
 }
 .min {
   opacity: 0.8;
