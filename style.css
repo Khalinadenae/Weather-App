@@ -13,7 +13,8 @@ body {
   box-shadow: 12px 12px 2px 1px rgba(95, 77, 67, 1);
 }
 h3 {
-  font-size: 65px;
+  font-size: 70px;
+  font-weight: bolder;
 }
 h2 {
   font-size: 15px;
@@ -37,17 +38,6 @@ h1:first-letter {
   text-transform: capitalize;
 }
 
-.btn-light {
-  background-color: rgba(98, 49, 4, 0.12);
-  color: rgba(95, 77, 67, 1);
-  border-radius: 0.5cm;
-  border: 0.5px transparent;
-  display: inline;
-  width: 20%;
-  margin: 5px;
-  line-height: 0.4in;
-  padding-bottom: none;
-}
 body {
   color: rgba(95, 77, 67, 1);
   font-family: "Playfair Display", serif;
@@ -105,25 +95,10 @@ button:hover {
   padding-bottom: none;
 }
 
-.units {
-  color: rgba(95, 77, 67, 1);
-  display: inline;
-  width: 20%;
-  margin: 5px;
-  padding: 5px;
-  line-height: 0.4in;
-  padding-bottom: none;
-}
-a {
-  color: rgba(95, 77, 67, 1);
-  text-decoration: none;
-}
 a:hover {
   color: rgba(95, 77, 67, 1);
 }
-.min {
-  opacity: 0.8;
-}
+
 .max {
   font-weight: 900px;
 }

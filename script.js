@@ -78,7 +78,7 @@ function showForecast(response) {
         forecastDay.temp.max
       )}°</span> 
       <span class="min">/${Math.round(forecastDay.temp.min)}°</span </th>
-      <th scope="col">  ${formatDay(forecastDay.dt)}  </th>
+      <th scope="col">${formatDay(forecastDay.dt)}</th>
       <th scope="col"> <img 
  src="http://openweathermap.org/img/wn/${
    forecastDay.weather[0].icon
@@ -141,11 +141,6 @@ function onSubmit(event) {
 
 //celsius to farenheit
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
 //when a user searches for a city  it should display the current temperature of the city.
 
 function showTemperature(response) {
@@ -153,7 +148,7 @@ function showTemperature(response) {
 
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#tempCF");
-  temperatureElement.innerHTML = `${temperature}°`;
+  temperatureElement.innerHTML = `${temperature}° F `;
 
   //temperature description
   let maxTemperature = Math.round(response.data.main.temp_max);
