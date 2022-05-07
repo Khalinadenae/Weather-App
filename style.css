@@ -103,3 +103,24 @@ a:hover {
 .max {
   font-weight: 900px;
 }
+
+/* media queries */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #current-location-button {
+    display: none;
+  }
+  #search-form {
+    width: 100%;
+  }
+  #tempCF {
+    font-size: 50px;
+  }
+  #city {
+    font-size: 40px;
+  }
+  ul {
+    margin: 0px;
+    padding: 0px 0px 10px 0px;
+  }
+}
